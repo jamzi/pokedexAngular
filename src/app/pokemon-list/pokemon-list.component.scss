@@ -1,0 +1,15 @@
+.pokemon-card-container {
+  display: flex;
+  flex-flow: column;
+
+  .pokemon-card {
+    margin-bottom: 5px;
+  }
+}
+
+.loading-row, .button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+

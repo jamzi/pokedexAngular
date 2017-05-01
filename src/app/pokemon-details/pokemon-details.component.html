@@ -1,0 +1,14 @@
+<div *ngIf="loaded">
+  <h2>
+    {{pokemon.name | uppercase}}
+  </h2>
+  <p>Height: {{ pokemon.height }}</p>
+  <p>Weight: {{ pokemon.weight }}</p>
+
+  <p>First 5 moves:</p>
+  <md-chip-list>
+    <md-chip color="accent" selected="true" *ngFor="let move of pokemonMoves">{{ move.move.name }}</md-chip>
+  </md-chip-list>
+  <button md-raised-button (click)="dialogRef.close()" class="close-button-pokemon-details">Close dialog</button>
+</div>
+<md-progress-spinner mode="indeterminate" color="primary" class="loading-indicator" *ngIf="!loaded"></md-progress-spinner>

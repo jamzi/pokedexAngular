@@ -1,0 +1,14 @@
+<div class="pokemon-card-container">
+  <div *ngIf="myPokemons.length !== 0">
+    <md-card class="pokemon-card" *ngFor="let myPokemon of myPokemons">
+      {{ myPokemon.name | uppercase }}
+      <button md-icon-button (click)="showInfo(myPokemon)">
+        <md-icon>info</md-icon>
+      </button>
+      <button md-icon-button (click)="delete(myPokemon)">
+        <md-icon>delete</md-icon>
+      </button>
+    </md-card>
+  </div>
+  <div *ngIf="myPokemons.length === 0">There are no saved pokemons :(</div>
+</div>

@@ -1,0 +1,19 @@
+<div class="loading-row">
+  <md-progress-spinner mode="indeterminate" color="primary" *ngIf="!loaded"></md-progress-spinner>
+</div>
+
+<div class="pokemon-card-container">
+  <md-card class="pokemon-card" *ngFor="let pokemon of pokemons">
+    {{ pokemon.name | uppercase }}
+    <button md-icon-button (click)="save(pokemon)">
+      <md-icon>star</md-icon>
+    </button>
+    <button md-icon-button (click)="showInfo(pokemon)">
+      <md-icon>info</md-icon>
+    </button>
+  </md-card>
+</div>
+
+<div class="button-row">
+  <button md-raised-button color="primary" *ngIf="loaded" (click)="getMorePokemons()">Load more</button>
+</div>

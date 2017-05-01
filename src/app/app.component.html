@@ -1,0 +1,18 @@
+<md-sidenav-container fullscreen>
+  <md-sidenav #start>
+    <md-nav-list>
+      <a md-list-item routerLink="/pokemon" (click)="start.close()">Pokémons</a>
+      <a md-list-item routerLink="/my" (click)="start.close()">My Pokémon</a>
+    </md-nav-list>
+    <hr>
+    <button md-button (click)="start.close()">CLOSE</button>
+  </md-sidenav>
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="start.open()">
+            <md-icon>menu</md-icon>
+        </button> {{ title }}
+  </md-toolbar>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>
